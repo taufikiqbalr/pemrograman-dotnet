@@ -3,149 +3,227 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0f4c5c" />
+  <meta name="theme-color" content="#08131f" />
   <meta name="description" content="Portal perkuliahan IF133 Pemrograman .NET — ITTS, Semester Ganjil 2026/2027." />
   <title>IF133 — Pemrograman .NET | ITTS</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="Beranda IF133">
-      <span class="brand-mark">.NET</span>
-      <span>
-        <strong>IF133</strong>
-        <small>Pemrograman .NET</small>
-      </span>
-    </a>
-    <nav class="nav" aria-label="Navigasi utama">
-      <a href="#schedule">Jadwal</a>
-      <a href="#materials">Materi</a>
-      <a href="#assignments">Tugas</a>
-      <a href="#assessment">Penilaian</a>
-    </nav>
-    <button id="themeToggle" class="icon-btn" type="button" aria-label="Ganti tema">◐</button>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#home" aria-label="Beranda IF133">
+        <span class="brand-orb">.NET</span>
+        <span class="brand-copy">
+          <strong>IF133</strong>
+          <small>Pemrograman .NET</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#classes">Kelas</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#materials">Materials</a>
+        <a href="#assignments">Tasks</a>
+        <a href="#assessment">Grades</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="mini-pill" href="https://github.com/taufikiqbalr/pemrograman-dotnet" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <button id="themeToggle" class="theme-btn" type="button" aria-label="Ganti tema">◐</button>
+      </div>
+    </div>
   </header>
 
   <main>
     <section id="home" class="hero container">
-      <div class="hero-copy">
-        <span class="eyebrow">Semester Ganjil 2026/2027 · Informatika ITTS</span>
-        <h1>IF133 — Pemrograman .NET</h1>
-        <p>
-          Course hub untuk pembelajaran backend modern menggunakan ASP.NET Core Web API,
-          Entity Framework Core, REST API, authentication/authorization, serta frontend
-          Node.js-based menggunakan Angular/TypeScript.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#schedule">Lihat Jadwal</a>
-          <a class="btn ghost" href="#materials">Buka Materi</a>
+      <div class="hero-main glass">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <span class="pulse-dot"></span>
+            Semester Ganjil 2026/2027
+          </div>
+          <h1>
+            Build the <span>backend.</span><br />
+            Connect the <span>frontend.</span><br />
+            Ship the <span>product.</span>
+          </h1>
+          <p>
+            Course hub IF133 untuk belajar ASP.NET Core Web API, Entity Framework Core,
+            REST, authentication, Angular/TypeScript, testing, debugging, hingga deployment readiness.
+          </p>
+          <div class="hero-actions">
+            <a class="cta primary" href="#schedule">Explore schedule <span>→</span></a>
+            <a class="cta secondary" href="#materials">Browse materials</a>
+          </div>
         </div>
-        <div class="course-meta">
-          <span>3 SKS</span><span>Semester 5</span><span>16 Pertemuan</span><span>Hybrid</span>
+
+        <div class="hero-side">
+          <div class="floating-label label-one">ASP.NET Core</div>
+          <div class="floating-label label-two">Angular</div>
+          <div class="floating-label label-three">REST API</div>
+
+          <div class="code-window">
+            <div class="code-top">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="code-file">Program.cs</span>
+            </div>
+            <div class="code-lines" aria-hidden="true">
+              <i class="w90"></i><i class="w66"></i><i class="w82 accent"></i><i class="w54"></i>
+              <i class="w76"></i><i class="w45 accent2"></i><i class="w64"></i>
+            </div>
+            <div class="terminal-line"><span>›</span> dotnet run <b>● ready</b></div>
+          </div>
+
+          <aside class="next-class-card">
+            <div class="next-top">
+              <span class="eyebrow">NEXT CLASS</span>
+              <span class="live-chip">LIVE SCHEDULE</span>
+            </div>
+            <h2 id="nextClassTitle">Menghitung jadwal…</h2>
+            <p id="nextClassTime">—</p>
+            <div class="next-bottom">
+              <span id="nextClassLocation" class="location-pill">—</span>
+              <a href="#classes">Semua kelas →</a>
+            </div>
+          </aside>
         </div>
       </div>
-      <aside class="next-class-card">
-        <span class="card-label">Kelas berikutnya</span>
-        <h2 id="nextClassTitle">Menghitung jadwal…</h2>
-        <p id="nextClassTime">—</p>
-        <div id="nextClassLocation" class="location-pill">—</div>
-      </aside>
+
+      <div class="stats-row">
+        <div class="stat-card"><strong>16</strong><span>Pertemuan</span></div>
+        <div class="stat-card"><strong>3</strong><span>SKS</span></div>
+        <div class="stat-card"><strong>2</strong><span>Kelas Aktif</span></div>
+        <div class="stat-card"><strong>100%</strong><span>Project-driven</span></div>
+      </div>
     </section>
 
-    <section class="container section">
+    <section id="classes" class="container section">
       <div class="section-heading">
         <div>
-          <span class="eyebrow">Class Schedule</span>
-          <h2>Kelas yang Diampu</h2>
+          <span class="eyebrow">CLASS MODE</span>
+          <h2>Pilih kelasmu ✦</h2>
+          <p class="section-sub">Jadwal tetap setiap Selasa, dengan mode belajar yang berbeda.</p>
         </div>
         <div class="segmented" id="classFilter" aria-label="Filter kelas"></div>
       </div>
       <div id="classCards" class="class-grid"></div>
     </section>
 
-    <section id="schedule" class="container section">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow">Weekly Plan</span>
-          <h2>Jadwal Perkuliahan</h2>
+    <section id="schedule" class="schedule-section section">
+      <div class="container">
+        <div class="section-heading schedule-head">
+          <div>
+            <span class="eyebrow">16-WEEK ROADMAP</span>
+            <h2>Schedule yang gampang dipindai 👀</h2>
+            <p class="section-sub">Scan per fase, cari topik, atau ganti ke tampilan grid.</p>
+          </div>
+          <div class="schedule-tools">
+            <div class="view-switch" id="viewSwitch">
+              <button class="active" data-view="roadmap" type="button">Roadmap</button>
+              <button data-view="grid" type="button">Grid</button>
+            </div>
+            <label class="search-box">
+              <span>⌕</span>
+              <input id="scheduleSearch" type="search" placeholder="Cari materi / tugas…" aria-label="Cari jadwal" />
+            </label>
+          </div>
         </div>
-        <div class="search-wrap">
-          <input id="scheduleSearch" type="search" placeholder="Cari topik, tugas, atau pertemuan…" aria-label="Cari jadwal" />
+
+        <div class="weekly-strip">
+          <div>
+            <span class="weekly-icon">◉</span>
+            <div><small>REGULER</small><strong>Selasa · 13:00–15:15 WIB</strong><span>Lab 1</span></div>
+          </div>
+          <div>
+            <span class="weekly-icon purple">◉</span>
+            <div><small>EKSEKUTIF</small><strong>Selasa · 19:00–21:30 WIB</strong><span>Zoom</span></div>
+          </div>
         </div>
+
+        <div id="phaseLegend" class="phase-legend"></div>
+        <div id="scheduleTimeline" class="schedule-roadmap"></div>
       </div>
-      <div id="scheduleTimeline" class="timeline"></div>
     </section>
 
-    <section id="materials" class="section alt">
+    <section id="materials" class="container section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">COURSE MATERIALS</span>
+          <h2>Learn → build → test.</h2>
+          <p class="section-sub">Setiap pertemuan punya ringkasan materi dan preview hands-on.</p>
+        </div>
+        <select id="materialFilter" class="select" aria-label="Filter materi">
+          <option value="all">Semua Pertemuan</option>
+        </select>
+      </div>
+      <div id="materialGrid" class="material-grid"></div>
+    </section>
+
+    <section id="assignments" class="section assignments-section">
       <div class="container">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">Course Materials</span>
-            <h2>Materi & Hands-on</h2>
+            <span class="eyebrow">COURSEWORK</span>
+            <h2>Tasks without the chaos.</h2>
+            <p class="section-sub">Satu tempat untuk lihat kuis, tugas, UTS, dan UAS.</p>
           </div>
-          <select id="materialFilter" class="select" aria-label="Filter materi">
-            <option value="all">Semua Pertemuan</option>
-          </select>
+          <span class="soft-badge">RPKPS aligned</span>
         </div>
-        <div id="materialGrid" class="material-grid"></div>
+        <div id="assignmentGrid" class="assignment-grid"></div>
       </div>
     </section>
 
-    <section id="assignments" class="container section">
+    <section id="assessment" class="container section">
       <div class="section-heading">
         <div>
-          <span class="eyebrow">Coursework</span>
-          <h2>Tugas, Kuis, dan Ujian</h2>
+          <span class="eyebrow">ASSESSMENT</span>
+          <h2>Where your grade comes from.</h2>
+          <p class="section-sub">Bobot transparan. Fokusnya tetap pada praktik dan project.</p>
         </div>
-        <span class="muted">Bobot mengikuti RPKPS IF133</span>
+        <strong class="grade-total">100%</strong>
       </div>
-      <div id="assignmentGrid" class="assignment-grid"></div>
-    </section>
 
-    <section id="assessment" class="section alt">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">Assessment</span>
-            <h2>Komponen Penilaian</h2>
-          </div>
-          <strong class="total-badge">Total 100%</strong>
+      <div class="assessment-layout">
+        <div class="grade-donut-card glass">
+          <div class="donut" id="gradeDonut"><span>100<small>%</small></span></div>
+          <div id="assessmentLegend" class="assessment-legend"></div>
         </div>
-        <div class="assessment-layout">
-          <div id="assessmentBars" class="assessment-bars"></div>
-          <div class="policy-card">
-            <h3>Target Kompetensi</h3>
-            <ul>
-              <li>Membangun REST API dengan ASP.NET Core.</li>
-              <li>Menggunakan EF Core untuk data persistence dan migration.</li>
-              <li>Menerapkan DTO, validation, error handling, logging, dan CORS.</li>
-              <li>Menerapkan authentication & authorization.</li>
-              <li>Mengintegrasikan frontend Angular/TypeScript dengan backend .NET.</li>
-              <li>Melakukan testing, debugging, build, dan deployment preparation.</li>
-            </ul>
+        <div class="skill-card">
+          <span class="eyebrow">YOU'LL BE ABLE TO</span>
+          <h3>From API to deploy-ready.</h3>
+          <div class="skill-chips">
+            <span>REST API</span><span>EF Core</span><span>CRUD</span><span>JWT</span>
+            <span>Angular</span><span>Debugging</span><span>Testing</span><span>Deployment</span>
           </div>
+          <p>
+            Target akhirnya bukan sekadar “kode jalan”, tapi aplikasi yang terstruktur,
+            aman, bisa diuji, dan siap dipresentasikan.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="container section instructor">
-      <div>
-        <span class="eyebrow">Instructor</span>
-        <h2>Taufik Iqbal Ramdhani, S.Kom., M.Sc.</h2>
-        <p>
-          Fokus perkuliahan: praktik pengembangan aplikasi modern, clean API contract,
-          integrasi full-stack, debugging, testing, dan kesiapan deployment.
-        </p>
+      <div class="instructor-card glass">
+        <div class="avatar">TI</div>
+        <div>
+          <span class="eyebrow">INSTRUCTOR</span>
+          <h2>Taufik Iqbal Ramdhani, S.Kom., M.Sc.</h2>
+          <p>Backend-first · project-based · full-stack integration · debugging mindset.</p>
+        </div>
+        <a class="cta secondary" href="https://github.com/taufikiqbalr/pemrograman-dotnet" target="_blank" rel="noreferrer">Repository ↗</a>
       </div>
-      <a class="btn ghost" href="https://github.com/taufikiqbalr/pemrograman-dotnet" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
     </section>
   </main>
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 IF133 Pemrograman .NET · Institut Teknologi Tangerang Selatan</span>
-      <span>Course Portal</span>
+      <span>IF133 · Pemrograman .NET · ITTS</span>
+      <span>Semester Ganjil 2026/2027</span>
     </div>
   </footer>
 
