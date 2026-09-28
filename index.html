@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0f4c5c" />
+  <meta name="description" content="Portal perkuliahan IF133 Pemrograman .NET — ITTS, Semester Ganjil 2026/2027." />
+  <title>IF133 — Pemrograman .NET | ITTS</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Beranda IF133">
+      <span class="brand-mark">.NET</span>
+      <span>
+        <strong>IF133</strong>
+        <small>Pemrograman .NET</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#schedule">Jadwal</a>
+      <a href="#materials">Materi</a>
+      <a href="#assignments">Tugas</a>
+      <a href="#assessment">Penilaian</a>
+    </nav>
+    <button id="themeToggle" class="icon-btn" type="button" aria-label="Ganti tema">◐</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <div class="hero-copy">
+        <span class="eyebrow">Semester Ganjil 2026/2027 · Informatika ITTS</span>
+        <h1>IF133 — Pemrograman .NET</h1>
+        <p>
+          Course hub untuk pembelajaran backend modern menggunakan ASP.NET Core Web API,
+          Entity Framework Core, REST API, authentication/authorization, serta frontend
+          Node.js-based menggunakan Angular/TypeScript.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#schedule">Lihat Jadwal</a>
+          <a class="btn ghost" href="#materials">Buka Materi</a>
+        </div>
+        <div class="course-meta">
+          <span>3 SKS</span><span>Semester 5</span><span>16 Pertemuan</span><span>Hybrid</span>
+        </div>
+      </div>
+      <aside class="next-class-card">
+        <span class="card-label">Kelas berikutnya</span>
+        <h2 id="nextClassTitle">Menghitung jadwal…</h2>
+        <p id="nextClassTime">—</p>
+        <div id="nextClassLocation" class="location-pill">—</div>
+      </aside>
+    </section>
+
+    <section class="container section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Class Schedule</span>
+          <h2>Kelas yang Diampu</h2>
+        </div>
+        <div class="segmented" id="classFilter" aria-label="Filter kelas"></div>
+      </div>
+      <div id="classCards" class="class-grid"></div>
+    </section>
+
+    <section id="schedule" class="container section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Weekly Plan</span>
+          <h2>Jadwal Perkuliahan</h2>
+        </div>
+        <div class="search-wrap">
+          <input id="scheduleSearch" type="search" placeholder="Cari topik, tugas, atau pertemuan…" aria-label="Cari jadwal" />
+        </div>
+      </div>
+      <div id="scheduleTimeline" class="timeline"></div>
+    </section>
+
+    <section id="materials" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Course Materials</span>
+            <h2>Materi & Hands-on</h2>
+          </div>
+          <select id="materialFilter" class="select" aria-label="Filter materi">
+            <option value="all">Semua Pertemuan</option>
+          </select>
+        </div>
+        <div id="materialGrid" class="material-grid"></div>
+      </div>
+    </section>
+
+    <section id="assignments" class="container section">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Coursework</span>
+          <h2>Tugas, Kuis, dan Ujian</h2>
+        </div>
+        <span class="muted">Bobot mengikuti RPKPS IF133</span>
+      </div>
+      <div id="assignmentGrid" class="assignment-grid"></div>
+    </section>
+
+    <section id="assessment" class="section alt">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Assessment</span>
+            <h2>Komponen Penilaian</h2>
+          </div>
+          <strong class="total-badge">Total 100%</strong>
+        </div>
+        <div class="assessment-layout">
+          <div id="assessmentBars" class="assessment-bars"></div>
+          <div class="policy-card">
+            <h3>Target Kompetensi</h3>
+            <ul>
+              <li>Membangun REST API dengan ASP.NET Core.</li>
+              <li>Menggunakan EF Core untuk data persistence dan migration.</li>
+              <li>Menerapkan DTO, validation, error handling, logging, dan CORS.</li>
+              <li>Menerapkan authentication & authorization.</li>
+              <li>Mengintegrasikan frontend Angular/TypeScript dengan backend .NET.</li>
+              <li>Melakukan testing, debugging, build, dan deployment preparation.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section instructor">
+      <div>
+        <span class="eyebrow">Instructor</span>
+        <h2>Taufik Iqbal Ramdhani, S.Kom., M.Sc.</h2>
+        <p>
+          Fokus perkuliahan: praktik pengembangan aplikasi modern, clean API contract,
+          integrasi full-stack, debugging, testing, dan kesiapan deployment.
+        </p>
+      </div>
+      <a class="btn ghost" href="https://github.com/taufikiqbalr/pemrograman-dotnet" target="_blank" rel="noreferrer">GitHub Repository ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 IF133 Pemrograman .NET · Institut Teknologi Tangerang Selatan</span>
+      <span>Course Portal</span>
+    </div>
+  </footer>
+
+  <dialog id="materialDialog" class="dialog">
+    <button id="dialogClose" class="dialog-close" aria-label="Tutup">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <script src="course-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
