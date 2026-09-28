@@ -146,7 +146,7 @@ function renderMaterials(){
   $("#materialGrid").innerHTML=rows.map(w=>{
     const phase=phaseForWeek(w.week);
     return `
-      <article class="material-card ${phase.className}" style="--phase:var(--phase)">
+      <article class="material-card ${phase.className}">
         <div class="material-icon">${MATERIAL_ICONS[phase.key] || "•"}</div>
         <span class="num">PERTEMUAN ${w.week}${w.sub?" · "+esc(w.sub):""}</span>
         <h3>${esc(w.title)}</h3>
